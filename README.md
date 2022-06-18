@@ -6,14 +6,14 @@
         <dependency>
             <groupId>com.lhstack.opensearch</groupId>
             <artifactId>opensearch-rest-filter-plugin</artifactId>
-            <version>2.0.0</version>
+            <version>1.3.3</version>
             <scope>provided</scope>
         </dependency>
 
         <dependency>
             <groupId>org.opensearch</groupId>
             <artifactId>opensearch</artifactId>
-            <version>2.0.0</version>
+            <version>1.3.3</version>
             <scope>provided</scope>
         </dependency>
     </dependencies>
