@@ -1,0 +1,22 @@
+<?xml version="1.0"?>
+<assembly>
+    <id>opensearch-basic-auth-filter</id>
+    <formats>
+        <format>zip</format>
+    </formats>
+    <includeBaseDirectory>false</includeBaseDirectory>
+    <files>
+        <file>
+            <source>${project.basedir}/src/main/resources/plugin-security.policy</source>
+            <outputDirectory/>
+            <filtered>true</filtered>
+        </file>
+    </files>
+    <dependencySets>
+        <dependencySet>
+            <outputDirectory/>
+            <useProjectArtifact>true</useProjectArtifact>
+            <useTransitiveFiltering>true</useTransitiveFiltering>
+        </dependencySet>
+    </dependencySets>
+</assembly>
