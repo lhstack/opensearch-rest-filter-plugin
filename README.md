@@ -63,6 +63,14 @@ public class ExampleFilter implements RestFilter {
     private HashSet<String> whiteList;
 
     @Override
+    public void initSettingsDefinition(Set<Setting<?>> settings) {
+        settings.add(Setting.simpleString("basic.auth.username", "admin",Setting.Property.NodeScope));
+        settings.add(Setting.simpleString("basic.auth.password", "admin",Setting.Property.NodeScope));
+        settings.add(Setting.boolSetting("basic.auth.enable", true,Setting.Property.NodeScope));
+        settings.add(Setting.simpleString("basic.auth.white-list", "",Setting.Property.NodeScope));
+    }
+
+    @Override
     public void init(Settings settings, DocumentRestHandler documentRestHandler, RestController restController, ClusterSettings clusterSettings, IndexScopedSettings indexScopedSettings, SettingsFilter settingsFilter, IndexNameExpressionResolver indexNameExpressionResolver, Supplier<DiscoveryNodes> nodesInCluster) {
         Map<String, String> env = System.getenv();
         JSONObject jsonObject = PrivilegedUtils.doPrivileged(() -> {
